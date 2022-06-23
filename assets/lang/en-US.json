@@ -1,3 +1,9 @@
 {
-    "merhaba": "Hello"
+    "merhaba": "Hello",
+    "nasilsin": "How are u?",
+     "gender":{
+        "male":"Hi man ;) ",
+        "female":"Hello girl :) ",
+        "other":"Hello "
+     },"sayi":"{} number"
 }

@@ -1,3 +1,10 @@
 {
-    "merhaba": "Merhabalar"
+    "merhaba": "Merhabalar",
+    "nasilsin": "Nasılsın?",
+    "gender":{
+        "male":"Hi adam ;) ",
+        "female":"Hello madam :) ",
+        "other":"Hello "
+    },
+    "sayi":"{} numara"
 }

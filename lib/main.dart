@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:test/views/home/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,16 +23,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  MaterialApp(
       title: 'Test Uygulaması',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Test Uygulaması'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      localizationsDelegates: context.localizationDelegates,
+      home:const HomeScreen(),
     );
   }
 }

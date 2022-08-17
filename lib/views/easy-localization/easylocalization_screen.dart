@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:test/core/extension/lang_extension.dart';
-import 'package:test/core/extension/locale_keys.g.dart';
-import 'package:test/core/extension/locale_keys_help.g.dart';
+import 'package:ssl_pinning_plugin/ssl_pinning_plugin.dart';
+
+import '../../core/extension/lang_extension.dart';
+import '../../core/extension/locale_keys.g.dart';
+import '../../core/extension/locale_keys_help.g.dart';
 
 class EasyLocalizationScreen extends StatefulWidget {
   const EasyLocalizationScreen({Key? key}) : super(key: key);
@@ -12,6 +14,29 @@ class EasyLocalizationScreen extends StatefulWidget {
 }
 
 class _EasyLocalizationScreenState extends State<EasyLocalizationScreen> {
+  Future getData() async {
+    // var res = await http.get(Uri.parse('http://192.168.1.101/php/nk_v2/deneme.php'));
+    var url = 'https://www.fehmivelioglu.com';
+    var allowedSHA = [
+      'CA 3B 3B CE 05 27 6D BC 7D A9 BC 80 D0 C2 0B D3 3A 38 AB 91'
+    ];
+    await SslPinningPlugin.check(
+            serverURL: url,
+            httpMethod: HttpMethod.Get,
+            headerHttp: Map(),
+            sha: SHA.SHA1,
+            allowedSHAFingerprints: allowedSHA,
+            timeout: 50)
+        .then((value) => print(value));
+    // print(res.body);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +56,7 @@ class _EasyLocalizationScreenState extends State<EasyLocalizationScreen> {
             Text(LocaleKeys.merhaba.locale),
             Text(LocaleKeysHelp.nasilsin.locale),
             Text(LocaleKeys.gender.tr(gender: 'male')),
-            Text(LocaleKeys.sayi.tr(args: ['2'])) 
+            Text(LocaleKeys.sayi.tr(args: ['2']))
           ],
         ),
       ),

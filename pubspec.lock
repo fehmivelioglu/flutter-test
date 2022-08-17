@@ -292,6 +292,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
+  ssl_pinning_plugin:
+    dependency: "direct main"
+    description:
+      name: ssl_pinning_plugin
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.0"
   stack_trace:
     dependency: transitive
     description:

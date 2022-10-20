@@ -1,26 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test/core/extension/device_size_extension.dart';
+import 'package:test/views/bloc/bloc_screen.dart';
 
+import '../bloc/cubit.dart';
 import '../easy-localization/easylocalization_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({ Key? key }) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Test Uygulaması'),
-        ),
-        body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextButton.icon(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>const EasyLocalizationScreen())),
-                icon: const Icon(Icons.language),
-                label: const Text('Easy Localization')),
-                DataTable(
+      appBar: AppBar(
+        title: const Text('Test Uygulaması'),
+      ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BlocProvider(
+                          create: (_) => CounterCubit(),
+                          child: const BlocTestScreen()))),
+              child: const Text('Cubit')),
+          TextButton.icon(
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EasyLocalizationScreen())),
+              icon: const Icon(Icons.language),
+              label: const Text('Easy Localization')),
+          DataTable(
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.vertical(
                   bottom: Radius.circular(10.0),
@@ -65,8 +79,8 @@ class HomeScreen extends StatelessWidget {
                   DataCell(Text('Alex Wick', textAlign: TextAlign.center))
                 ])
               ])
-          ],
-        )),
-      );
+        ],
+      )),
+    );
   }
 }

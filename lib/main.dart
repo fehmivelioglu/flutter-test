@@ -1,5 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test/views/bloc/bloc_screen.dart';
+import 'package:test/views/bloc/cubit.dart';
 import 'package:test/views/home/home_screen.dart';
 
 Future<void> main() async {
@@ -23,13 +26,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       title: 'Test Uygulaması',
       debugShowCheckedModeBanner: false,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       localizationsDelegates: context.localizationDelegates,
-      home:const HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }

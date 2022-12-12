@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:ssl_pinning_plugin/ssl_pinning_plugin.dart';
@@ -31,10 +32,28 @@ class _EasyLocalizationScreenState extends State<EasyLocalizationScreen> {
     // print(res.body);
   }
 
+  Future getDataWithDio() async {
+  //    SecureHttpClient getClient(List<String> allowedSHAFingerprints){
+  //     final secureClient = SecureHttpClient.build(certificateSHA256Fingerprints);
+  //     return secureClient;
+  // }
+
+  // myRepositoryMethod(){ 
+  //   secureClient.get("myurl.com");
+  // }    
+    try {
+      var response = await Dio().get('http://www.google.com');
+      print(response.data);
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
-    getData();
+    // getData();
+    getDataWithDio();
   }
 
   @override

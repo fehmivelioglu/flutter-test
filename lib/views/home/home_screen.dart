@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test/core/extension/device_size_extension.dart';
 import 'package:test/views/bloc/bloc_screen.dart';
 import 'package:test/views/flash_dialog/flash_dialog_view.dart';
+import 'package:test/views/lazy-loading/lazyload_screen.dart';
 
 import '../bloc/cubit.dart';
 import '../easy-localization/easylocalization_screen.dart';
@@ -28,6 +29,12 @@ class HomeScreen extends StatelessWidget {
                           create: (_) => CounterCubit(),
                           child: const BlocTestScreen()))),
               child: const Text('Cubit')),
+              TextButton(
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const LazyLoadingScreen())),
+              child: const Text('LazyLoad')),
           TextButton.icon(
               onPressed: () => Navigator.push(
                   context,

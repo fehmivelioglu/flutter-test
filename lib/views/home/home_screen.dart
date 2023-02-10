@@ -5,14 +5,20 @@ import 'package:test/views/bloc/bloc_screen.dart';
 import 'package:test/views/flash_dialog/flash_dialog_view.dart';
 import 'package:test/views/lazy-loading/lazyload_screen.dart';
 
+import '../../core/service/test_service.dart';
 import '../bloc/cubit.dart';
 import '../easy-localization/easylocalization_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  
   const HomeScreen({Key? key}) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context) {
+    final TestService _service = TestService();
+    _service.getDeviceInfo();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Test Uygulaması'),

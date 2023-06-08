@@ -113,7 +113,7 @@ SPEC CHECKSUMS:
   shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
   ssl_pinning_plugin: 21775d400c46620cc8f6f473824a6362c1b257f8
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
-  webview_flutter_wkwebview: b7e70ef1ddded7e69c796c7390ee74180182971f
+  webview_flutter_wkwebview: 2e2d318f21a5e036e2c3f26171342e95908bd60a
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 

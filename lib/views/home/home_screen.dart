@@ -4,16 +4,14 @@ import 'package:test/core/extension/device_size_extension.dart';
 import 'package:test/views/bloc/bloc_screen.dart';
 import 'package:test/views/flash_dialog/flash_dialog_view.dart';
 import 'package:test/views/lazy-loading/lazyload_screen.dart';
+import 'package:test/views/webview_request/webview_request_screen.dart';
 
 import '../../core/service/test_service.dart';
 import '../bloc/cubit.dart';
 import '../easy-localization/easylocalization_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  
   const HomeScreen({Key? key}) : super(key: key);
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +33,13 @@ class HomeScreen extends StatelessWidget {
                           create: (_) => CounterCubit(),
                           child: const BlocTestScreen()))),
               child: const Text('Cubit')),
-              TextButton(
+          TextButton(
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const WebViewRequestScreen())),
+              child: const Text('Webview Request')),
+          TextButton(
               onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -48,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                       builder: (context) => const EasyLocalizationScreen())),
               icon: const Icon(Icons.language),
               label: const Text('Easy Localization')),
-                TextButton.icon(
+          TextButton.icon(
               onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(

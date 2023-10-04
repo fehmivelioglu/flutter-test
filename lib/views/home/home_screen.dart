@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:provider/provider.dart';
 import 'package:test/core/extension/device_size_extension.dart';
+import 'package:test/core/provider.dart';
 import 'package:test/views/bloc/bloc_screen.dart';
 import 'package:test/views/flash_dialog/flash_dialog_view.dart';
 import 'package:test/views/lazy-loading/lazyload_screen.dart';
@@ -25,6 +27,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text(Provider.of<BasketProvider>(context).basket.toString()),
           TextButton(
               onPressed: () => Navigator.push(
                   context,

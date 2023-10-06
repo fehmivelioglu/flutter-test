@@ -51,6 +51,22 @@ void main() {
     share.deger = '12321321321';
     print(share.deger);
   });
+
+  test('List Types', () {
+    List list = [0, 1, 2, 3];
+    Map map = {
+      0: ['index0'],
+      1: 'index1'
+    };
+    Map json = {'ilk': 'son'};
+    var encodedJson = jsonEncode(json);
+    var jsonResponse = jsonDecode(encodedJson);
+    print(jsonResponse.runtimeType);
+  });
+
+  test('super class', () {
+    NormalClass();
+  });
 }
 
 class BasicShared {
@@ -59,5 +75,17 @@ class BasicShared {
 
   set deger(String? value) {
     variable = 'merhabalr';
+  }
+}
+
+class NormalClass extends ExtendedClass {
+  NormalClass() : super(2) {
+    print('normal constructor');
+  }
+}
+
+class ExtendedClass {
+  ExtendedClass(int parameter) {
+    print(parameter);
   }
 }

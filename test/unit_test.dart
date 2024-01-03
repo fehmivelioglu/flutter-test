@@ -32,6 +32,7 @@ void main() {
   test('try catch', () async {});
 
   test('enum', () {
+    // ignore: prefer_typing_uninitialized_variables
     var x;
     try {
       if (x['merhaba'] == 'sadjklas') {
@@ -53,11 +54,11 @@ void main() {
   });
 
   test('List Types', () {
-    List list = [0, 1, 2, 3];
-    Map map = {
-      0: ['index0'],
-      1: 'index1'
-    };
+    // List list = [0, 1, 2, 3];
+    // Map map = {
+    //   0: ['index0'],
+    //   1: 'index1'
+    // };
     Map json = {'ilk': 'son'};
     var encodedJson = jsonEncode(json);
     var jsonResponse = jsonDecode(encodedJson);

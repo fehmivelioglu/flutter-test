@@ -24,7 +24,7 @@ class _EasyLocalizationScreenState extends State<EasyLocalizationScreen> {
     await SslPinningPlugin.check(
             serverURL: url,
             httpMethod: HttpMethod.Get,
-            headerHttp: Map(),
+            headerHttp: <String, String>{},
             sha: SHA.SHA1,
             allowedSHAFingerprints: allowedSHA,
             timeout: 50)

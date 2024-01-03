@@ -6,6 +6,7 @@ import 'package:test/core/provider.dart';
 import 'package:test/views/bloc/bloc_screen.dart';
 import 'package:test/views/flash_dialog/flash_dialog_view.dart';
 import 'package:test/views/lazy-loading/lazyload_screen.dart';
+import 'package:test/views/ml_kit/object_detection_view.dart';
 import 'package:test/views/webview_request/webview_request_screen.dart';
 
 import '../../core/service/test_service.dart';
@@ -28,6 +29,12 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(Provider.of<BasketProvider>(context).basket.toString()),
+          TextButton(
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ObjectDetectionView())),
+              child: const Text('Object detection')),
           TextButton(
               onPressed: () => Navigator.push(
                   context,

@@ -18,19 +18,19 @@ class FlashDialogView extends StatelessWidget {
             controller: controller,
             backgroundColor: Colors.white,
             brightness: Brightness.light,
-            boxShadows: [BoxShadow(blurRadius: 4)],
+            boxShadows: const [BoxShadow(blurRadius: 4)],
             barrierBlur: 3.0,
             barrierColor: Colors.black38,
             barrierDismissible: true,
             behavior: style,
             position: FlashPosition.top,
             child: FlashBar(
-              title: Text('Title'),
-              content: Text('Hello world!'),
+              title: const Text('Title'),
+              content: const Text('Hello world!'),
               showProgressIndicator: true,
               primaryAction: TextButton(
                 onPressed: () => controller.dismiss(),
-                child: Text('DISMISS', style: TextStyle(color: Colors.amber)),
+                child: const Text('DISMISS', style: TextStyle(color: Colors.amber)),
               ),
             ),
           );

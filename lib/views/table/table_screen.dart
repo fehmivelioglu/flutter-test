@@ -27,8 +27,8 @@ class _TableScreenState extends State<TableScreen> {
                   const EdgeInsets.symmetric(horizontal: 8.0, vertical: 18.0),
               decoration: BoxDecoration(
                   color: Colors.grey, borderRadius: BorderRadius.circular(5)),
-              child: Row(
-                children: const [
+              child: const Row(
+                children: [
                   Expanded(child: Center(child: Text('1.sutun'))),
                   Expanded(child: Center(child: Text('2.sutun uzun'))),
                   Expanded(child: Center(child: Text('3.sutun')))
@@ -67,8 +67,8 @@ class _TableScreenState extends State<TableScreen> {
                       decoration: BoxDecoration(
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(5)),
-                      child: Row(
-                        children: const [
+                      child: const Row(
+                        children: [
                           Expanded(child: Center(child: Text('1.sutun'))),
                           Expanded(child: Center(child: Text('2.sutun uzun'))),
                           Expanded(child: Center(child: Text('3.sutun')))
@@ -98,8 +98,8 @@ class _TableScreenState extends State<TableScreen> {
       margin: const EdgeInsets.symmetric(horizontal: 8.0),
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 18.0),
       color: color,
-      child: Row(
-        children: const [
+      child: const Row(
+        children: [
           Expanded(child: Center(child: Text('1.sutun'))),
           Expanded(child: Center(child: Text('2.sutun uzun'))),
           Expanded(child: Center(child: SelectableText('3.sutun')))

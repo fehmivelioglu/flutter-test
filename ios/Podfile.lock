@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
+  - camera_avfoundation (0.0.1):
+    - Flutter
   - CryptoSwift (1.5.1)
   - device_info (0.0.1):
     - Flutter
@@ -45,6 +47,11 @@ PODS:
   - google_mlkit_commons (0.6.1):
     - Flutter
     - MLKitVision
+  - google_mlkit_image_labeling (0.10.0):
+    - Flutter
+    - google_mlkit_commons
+    - GoogleMLKit/ImageLabeling (~> 4.0.0)
+    - GoogleMLKit/ImageLabelingCustom (~> 4.0.0)
   - google_mlkit_object_detection (0.11.0):
     - Flutter
     - google_mlkit_commons
@@ -54,6 +61,12 @@ PODS:
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
     - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleMLKit/ImageLabeling (4.0.0):
+    - GoogleMLKit/MLKitCore
+    - MLKitImageLabeling (~> 3.0.0)
+  - GoogleMLKit/ImageLabelingCustom (4.0.0):
+    - GoogleMLKit/MLKitCore
+    - MLKitImageLabelingCustom (~> 3.0.0)
   - GoogleMLKit/MLKitCore (4.0.0):
     - MLKitCommon (~> 9.0.0)
   - GoogleMLKit/ObjectDetection (4.0.0):
@@ -83,6 +96,8 @@ PODS:
   - GoogleUtilitiesComponents (1.1.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (2.3.0)
+  - image_picker_ios (0.0.1):
+    - Flutter
   - MLImage (1.0.0-beta4)
   - MLKitCommon (9.0.0):
     - GoogleDataTransport (~> 9.0)
@@ -92,9 +107,19 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 7.0)
     - GoogleUtilitiesComponents (~> 1.0)
     - GTMSessionFetcher/Core (< 3.0, >= 1.1)
+  - MLKitImageLabeling (3.0.0):
+    - MLKitCommon (~> 9.0)
+    - MLKitImageLabelingCommon (~> 5.0)
+    - MLKitVision (~> 5.0)
+    - MLKitVisionKit (~> 6.0)
   - MLKitImageLabelingCommon (5.0.0):
     - MLKitCommon (~> 9.0)
     - MLKitVision (~> 5.0)
+  - MLKitImageLabelingCustom (3.0.0):
+    - MLKitCommon (~> 9.0)
+    - MLKitImageLabelingCommon (~> 5.0)
+    - MLKitVision (~> 5.0)
+    - MLKitVisionKit (~> 6.0)
   - MLKitObjectDetection (3.0.0):
     - MLKitCommon (~> 9.0)
     - MLKitObjectDetectionCommon (~> 5.0)
@@ -142,13 +167,16 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
+  - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
   - device_info (from `.symlinks/plugins/device_info/ios`)
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - Flutter (from `Flutter`)
   - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
   - google_mlkit_commons (from `.symlinks/plugins/google_mlkit_commons/ios`)
+  - google_mlkit_image_labeling (from `.symlinks/plugins/google_mlkit_image_labeling/ios`)
   - google_mlkit_object_detection (from `.symlinks/plugins/google_mlkit_object_detection/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - platform_device_id (from `.symlinks/plugins/platform_device_id/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - ssl_pinning_plugin (from `.symlinks/plugins/ssl_pinning_plugin/ios`)
@@ -168,7 +196,9 @@ SPEC REPOS:
     - GTMSessionFetcher
     - MLImage
     - MLKitCommon
+    - MLKitImageLabeling
     - MLKitImageLabelingCommon
+    - MLKitImageLabelingCustom
     - MLKitObjectDetection
     - MLKitObjectDetectionCommon
     - MLKitObjectDetectionCustom
@@ -180,6 +210,8 @@ SPEC REPOS:
     - SwiftyGif
 
 EXTERNAL SOURCES:
+  camera_avfoundation:
+    :path: ".symlinks/plugins/camera_avfoundation/ios"
   device_info:
     :path: ".symlinks/plugins/device_info/ios"
   device_info_plus:
@@ -192,8 +224,12 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_secure_storage/ios"
   google_mlkit_commons:
     :path: ".symlinks/plugins/google_mlkit_commons/ios"
+  google_mlkit_image_labeling:
+    :path: ".symlinks/plugins/google_mlkit_image_labeling/ios"
   google_mlkit_object_detection:
     :path: ".symlinks/plugins/google_mlkit_object_detection/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
   platform_device_id:
     :path: ".symlinks/plugins/platform_device_id/ios"
   shared_preferences_foundation:
@@ -205,15 +241,17 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  camera_avfoundation: 3125e8cd1a4387f6f31c6c63abb8a55892a9eeeb
   CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
   device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
-  device_info_plus: e5c5da33f982a436e103237c0c85f9031142abed
+  device_info_plus: c6fb39579d0f423935b0c9ce7ee2f44b71b9fce6
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
-  file_picker: ce3938a0df3cc1ef404671531facef740d03f920
+  file_picker: 15fd9539e4eb735dc54bae8c0534a7a9511a03de
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_secure_storage: 23fc622d89d073675f2eaa109381aefbcf5a49be
   google_mlkit_commons: 3857c1e9f23ca02073f8dd34a7a3580feb814cef
+  google_mlkit_image_labeling: 6970a48a9c3d2a0eeba7865cec49e4eb8a1b57a9
   google_mlkit_object_detection: bd742a6a0f607e1ebdbaf01f4fe9fe869f2e7d00
   GoogleDataTransport: f0308f5905a745f94fb91fea9c6cbaf3831cb1bd
   GoogleMLKit: 2bd0dc6253c4d4f227aad460f69215a504b2980e
@@ -221,9 +259,12 @@ SPEC CHECKSUMS:
   GoogleUtilities: c63691989bf362ba0505507da00eeb326192e83e
   GoogleUtilitiesComponents: 679b2c881db3b615a2777504623df6122dd20afe
   GTMSessionFetcher: 3a63d75eecd6aa32c2fc79f578064e1214dfdec2
+  image_picker_ios: 4a8aadfbb6dc30ad5141a2ce3832af9214a705b5
   MLImage: 7bb7c4264164ade9bf64f679b40fb29c8f33ee9b
   MLKitCommon: c1b791c3e667091918d91bda4bba69a91011e390
+  MLKitImageLabeling: 9fcdbbfbc454f22009c10015c403ac6319385cdf
   MLKitImageLabelingCommon: 79ffbc10bd0c3a6407aa423aeb076f76a8883e15
+  MLKitImageLabelingCustom: 0e771d063bb920cd4aa751469d23b722a9ef0056
   MLKitObjectDetection: 065c494fb18d01b3580eaa29f0df3854bee8b5cf
   MLKitObjectDetectionCommon: 424e43365d7ef7dd7005a4799e5303eeb4287fec
   MLKitObjectDetectionCustom: ed2376de1d1893e761a843f3490169c7c4de9633

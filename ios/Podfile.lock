@@ -1,12 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
-<<<<<<< HEAD
   - CryptoSwift (1.8.1)
-=======
-  - camera_avfoundation (0.0.1):
-    - Flutter
-  - CryptoSwift (1.5.1)
->>>>>>> refs/remotes/origin/master
   - device_info (0.0.1):
     - Flutter
   - device_info_plus (0.0.1):
@@ -155,16 +149,9 @@ PODS:
   - nanopb/encode (2.30909.0)
   - platform_device_id (0.0.1):
     - Flutter
-<<<<<<< HEAD
   - SDWebImage (5.19.0):
     - SDWebImage/Core (= 5.19.0)
   - SDWebImage/Core (5.19.0)
-=======
-  - PromisesObjC (2.3.1)
-  - SDWebImage (5.15.0):
-    - SDWebImage/Core (= 5.15.0)
-  - SDWebImage/Core (5.15.0)
->>>>>>> refs/remotes/origin/master
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
@@ -251,23 +238,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-<<<<<<< HEAD
   CryptoSwift: b9c701d6f5011df23794dbf7f2e480a77835d83d
-=======
-  camera_avfoundation: 3125e8cd1a4387f6f31c6c63abb8a55892a9eeeb
-  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
->>>>>>> refs/remotes/origin/master
   device_info: d7d233b645a32c40dfdc212de5cf646ca482f175
   device_info_plus: c6fb39579d0f423935b0c9ce7ee2f44b71b9fce6
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
-<<<<<<< HEAD
   file_picker: ce3938a0df3cc1ef404671531facef740d03f920
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-=======
-  file_picker: 15fd9539e4eb735dc54bae8c0534a7a9511a03de
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
->>>>>>> refs/remotes/origin/master
   flutter_secure_storage: 23fc622d89d073675f2eaa109381aefbcf5a49be
   google_mlkit_commons: 3857c1e9f23ca02073f8dd34a7a3580feb814cef
   google_mlkit_image_labeling: 6970a48a9c3d2a0eeba7865cec49e4eb8a1b57a9
@@ -291,21 +268,12 @@ SPEC CHECKSUMS:
   MLKitVisionKit: 5b5472d40ffc143bda693ba20a3cff44fe627d41
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   platform_device_id: 81b3e2993881f87d0c82ef151dc274df4869aef5
-<<<<<<< HEAD
   SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
-=======
-  PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
-  SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
->>>>>>> refs/remotes/origin/master
   shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
   ssl_pinning_plugin: 21775d400c46620cc8f6f473824a6362c1b257f8
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
   webview_flutter_wkwebview: 2e2d318f21a5e036e2c3f26171342e95908bd60a
 
-<<<<<<< HEAD
 PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
-=======
-PODFILE CHECKSUM: 41e897653e95d997b179961a3ef31ff206c50bc5
->>>>>>> refs/remotes/origin/master
 
 COCOAPODS: 1.15.2

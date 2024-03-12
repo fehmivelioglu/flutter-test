@@ -32,14 +32,9 @@ void main() {
   test('try catch', () async {});
 
   test('enum', () {
-<<<<<<< HEAD
     Map? x = {
       'merhaba':'ss'
     };
-=======
-    // ignore: prefer_typing_uninitialized_variables
-    var x;
->>>>>>> refs/remotes/origin/master
     try {
       if (x['merhaba'] == 'sadjklas') {
         print('sdadsa');

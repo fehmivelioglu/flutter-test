@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// import 'package:android_id/android_id.dart';
+>>>>>>> refs/remotes/origin/master
 import 'package:http/http.dart' as http;
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:platform_device_id/platform_device_id.dart';

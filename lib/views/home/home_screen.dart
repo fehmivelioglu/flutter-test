@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:test/core/extension/device_size_extension.dart';
 import 'package:test/core/provider.dart';
 import 'package:test/views/bloc/bloc_screen.dart';
-import 'package:test/views/flash_dialog/flash_dialog_view.dart';
 import 'package:test/views/lazy-loading/lazyload_screen.dart';
 import 'package:test/views/webview_request/webview_request_screen.dart';
 
@@ -55,13 +54,6 @@ class HomeScreen extends StatelessWidget {
                       builder: (context) => const EasyLocalizationScreen())),
               icon: const Icon(Icons.language),
               label: const Text('Easy Localization')),
-          TextButton.icon(
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const FlashDialogView())),
-              icon: const Icon(Icons.message),
-              label: const Text('Flash bar')),
           DataTable(
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.vertical(

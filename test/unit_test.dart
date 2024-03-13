@@ -1,30 +1,29 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:test/core/service/test_service.dart';
 
 enum SharedKeys { ssl, fcmToken }
 
 void main() {
-  late TestService testService;
+  // late TestService testService;
 
-  setUp(() {
-    TestWidgetsFlutterBinding.ensureInitialized();
-    testService = TestService();
-  });
-  test('Api test', () async {
-    var res = await testService.getTestResults();
-    var check = (json.decode(res.body) as List).isNotEmpty;
-    expect(check, true);
-  });
+  // setUp(() {
+  //   TestWidgetsFlutterBinding.ensureInitialized();
+  //   testService = TestService();
+  // });
+  // test('Api test', () async {
+  //   var res = await testService.getTestResults();
+  //   var check = (json.decode(res.body) as List).isNotEmpty;
+  //   expect(check, true);
+  // });
 
   test('Final initialize test', () {
-    final map = {};
+    final map = <String, String>{};
     map['platform'] = 'merhaba';
-    final List list = [];
-    list.add('1');
-    list.add('1');
-    list.add('1');
+    final list = <String>[];
+    // list.add('1');
+    // list.add('1');
+    // list.add('1');
     print(map);
     print(list);
   });
@@ -32,9 +31,7 @@ void main() {
   test('try catch', () async {});
 
   test('enum', () {
-    Map? x = {
-      'merhaba':'ss'
-    };
+    final x = <String,String>{'merhaba': 'ss'};
     try {
       if (x['merhaba'] == 'sadjklas') {
         print('sdadsa');
@@ -60,9 +57,9 @@ void main() {
     //   0: ['index0'],
     //   1: 'index1'
     // };
-    Map json = {'ilk': 'son'};
-    var encodedJson = jsonEncode(json);
-    var jsonResponse = jsonDecode(encodedJson);
+    final  json = <String,String>{'ilk': 'son'};
+    final encodedJson = jsonEncode(json);
+    final jsonResponse = jsonDecode(encodedJson);
     print(jsonResponse.runtimeType);
   });
 

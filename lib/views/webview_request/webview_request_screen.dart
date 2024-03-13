@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewRequestScreen extends StatefulWidget {
-  const WebViewRequestScreen({Key? key}) : super(key: key);
+  const WebViewRequestScreen({super.key});
 
   @override
   State<WebViewRequestScreen> createState() => _WebViewRequestScreenState();
@@ -20,12 +20,12 @@ class _WebViewRequestScreenState extends State<WebViewRequestScreen> {
           ..setUserAgent('mobileAppStore')
           ..loadRequest(
               Uri.parse(
-                  'http://localhost/php_v2/***'),
+                  'http://localhost/php_v2/***',),
               headers: {'Content-Type': 'application/json; charset=utf-8'},
               method: LoadRequestMethod.post,
               body: Uint8List.fromList(utf8.encode(
                 jsonEncode({'deneme':'merhaba','fav':'velio'}),
-              )))
+              ),),)
         // ..setNavigationDelegate(NavigationDelegate(
         //   onNavigationRequest: (request) => NavigationDecision.navigate,
         // )

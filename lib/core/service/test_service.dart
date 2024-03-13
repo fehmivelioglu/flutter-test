@@ -1,16 +1,16 @@
-import 'package:http/http.dart' as http;
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:http/http.dart' as http;
 import 'package:platform_device_id/platform_device_id.dart';
 import 'package:test/core/shared/secure_storage.dart';
 
 class TestService {
-  Future getTestResults() async {
-    final Uri _apiUrl = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    var res = await http.get(_apiUrl);
+  Future<dynamic> getTestResults() async {
+    final apiUrl = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final res = await http.get(apiUrl);
     return res;
   }
 
-  Future getDeviceInfo() async {
+  Future<dynamic> getDeviceInfo() async {
     final info = DeviceInfoPlugin();
     // final androidInfo = await info.androidInfo;
     print(await info.iosInfo);

@@ -1,13 +1,14 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorageManager {
+
+  SecureStorageManager._init();
   static SecureStorageManager? _instance;
+  // ignore: prefer_constructors_over_static_methods
   static SecureStorageManager get instance {
     _instance ??= SecureStorageManager._init();
     return _instance!;
   }
-
-  SecureStorageManager._init();
 
   final _storage = const FlutterSecureStorage();
 
@@ -23,7 +24,7 @@ class SecureStorageManager {
         key: key,
         value: value,
         aOptions: _getAndroidOptions,
-        iOptions: _getIosOptions);
+        iOptions: _getIosOptions,);
   }
 
   Future<String?> getStorage(String key) {
@@ -31,7 +32,7 @@ class SecureStorageManager {
         key: key,
         aOptions: const AndroidOptions(encryptedSharedPreferences: true),
         iOptions: const IOSOptions(
-            accessibility: KeychainAccessibility.first_unlock));
+            accessibility: KeychainAccessibility.first_unlock,),);
   }
 
   void deleteStorage() {

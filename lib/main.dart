@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'core/provider.dart';
-import 'views/home/home_screen.dart';
+import 'package:test/core/provider.dart';
+import 'package:test/views/home/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,18 +15,18 @@ Future<void> main() async {
         ChangeNotifierProvider(create: (context) => BasketProvider()),
       ],
       child: EasyLocalization(
-          supportedLocales: const [Locale('tr', 'TR'), Locale('en', 'US')],
-          path: 'assets/lang',
-          useFallbackTranslations: true,
-          fallbackLocale: const Locale('tr', 'TR'),
-          saveLocale: true,
-          child: const MyApp()),
+        supportedLocales: const [Locale('tr', 'TR'), Locale('en', 'US')],
+        path: 'assets/lang',
+        useFallbackTranslations: true,
+        fallbackLocale: const Locale('tr', 'TR'),
+        child: const MyApp(),
+      ),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

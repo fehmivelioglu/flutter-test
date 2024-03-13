@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class TableScreen extends StatefulWidget {
-  const TableScreen({Key? key}) : super(key: key);
+  const TableScreen({super.key});
 
   @override
   State<TableScreen> createState() => _TableScreenState();
 }
 
 class _TableScreenState extends State<TableScreen> {
-  var index = 0;
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,16 +22,16 @@ class _TableScreenState extends State<TableScreen> {
           children: [
             Container(
               margin:
-                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               padding:
-                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 18.0),
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 18),
               decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(5)),
+                  color: Colors.grey, borderRadius: BorderRadius.circular(5),),
               child: const Row(
                 children: [
                   Expanded(child: Center(child: Text('1.sutun'))),
                   Expanded(child: Center(child: Text('2.sutun uzun'))),
-                  Expanded(child: Center(child: Text('3.sutun')))
+                  Expanded(child: Center(child: Text('3.sutun'))),
                 ],
               ),
             ),
@@ -61,17 +61,17 @@ class _TableScreenState extends State<TableScreen> {
                         ],
                       ),
                     Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 8.0),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 8.0, vertical: 18.0),
+                          horizontal: 8, vertical: 18,),
                       decoration: BoxDecoration(
                           color: Colors.grey,
-                          borderRadius: BorderRadius.circular(5)),
+                          borderRadius: BorderRadius.circular(5),),
                       child: const Row(
                         children: [
                           Expanded(child: Center(child: Text('1.sutun'))),
                           Expanded(child: Center(child: Text('2.sutun uzun'))),
-                          Expanded(child: Center(child: Text('3.sutun')))
+                          Expanded(child: Center(child: Text('3.sutun'))),
                         ],
                       ),
                     ),
@@ -82,27 +82,27 @@ class _TableScreenState extends State<TableScreen> {
                               index++;
                             });
                           },
-                          child: const Text('Eylül ayı ve öncesi'))
+                          child: const Text('Eylül ayı ve öncesi'),),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  Container rowContainer(color) {
+  Container rowContainer(Color? color) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8.0),
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 18.0),
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 18),
       color: color,
       child: const Row(
         children: [
           Expanded(child: Center(child: Text('1.sutun'))),
           Expanded(child: Center(child: Text('2.sutun uzun'))),
-          Expanded(child: Center(child: SelectableText('3.sutun')))
+          Expanded(child: Center(child: SelectableText('3.sutun'))),
         ],
       ),
     );

@@ -3,22 +3,22 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:test/core/extension/device_size_extension.dart';
 import 'package:test/core/provider.dart';
+import 'package:test/core/service/test_service.dart';
 import 'package:test/views/bloc/bloc_screen.dart';
+import 'package:test/views/bloc/cubit.dart';
+import 'package:test/views/easy-localization/easylocalization_screen.dart';
 import 'package:test/views/lazy-loading/lazyload_screen.dart';
 import 'package:test/views/ml_kit/object_detection_view.dart';
 import 'package:test/views/webview_request/webview_request_screen.dart';
 
-import '../../core/service/test_service.dart';
-import '../bloc/cubit.dart';
-import '../easy-localization/easylocalization_screen.dart';
-
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final TestService _service = TestService();
-    _service.getDeviceInfo();
+    // final service =
+    TestService().getDeviceInfo();
+    // service.getDeviceInfo();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Test Uygulaması'),
@@ -31,83 +31,83 @@ class HomeScreen extends StatelessWidget {
           TextButton(
               onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const ObjectDetectionView())),
-              child: const Text('Object detection')),
+                  MaterialPageRoute<dynamic>(
+                      builder: (context) => const ObjectDetectionView(),),),
+              child: const Text('Object detection'),),
           TextButton(
               onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<dynamic>(
                       builder: (context) => BlocProvider(
                           create: (_) => CounterCubit(),
-                          child: const BlocTestScreen()))),
-              child: const Text('Cubit')),
+                          child: const BlocTestScreen(),),),),
+              child: const Text('Cubit'),),
           TextButton(
               onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const WebViewRequestScreen())),
-              child: const Text('Webview Request')),
+                  MaterialPageRoute<dynamic>(
+                      builder: (context) => const WebViewRequestScreen(),),),
+              child: const Text('Webview Request'),),
           TextButton(
               onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const LazyLoadingScreen())),
-              child: const Text('LazyLoad')),
+                  MaterialPageRoute<dynamic>(
+                      builder: (context) => const LazyLoadingScreen(),),),
+              child: const Text('LazyLoad'),),
           TextButton.icon(
               onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const EasyLocalizationScreen())),
+                  MaterialPageRoute<dynamic>(
+                      builder: (context) => const EasyLocalizationScreen(),),),
               icon: const Icon(Icons.language),
-              label: const Text('Easy Localization')),
+              label: const Text('Easy Localization'),),
           DataTable(
               decoration: BoxDecoration(
                 borderRadius: const BorderRadius.vertical(
-                  bottom: Radius.circular(10.0),
+                  bottom: Radius.circular(10),
                 ),
                 color: Colors.grey[350],
               ),
               border: TableBorder.symmetric(
-                  inside: const BorderSide(color: Colors.black)),
+                  inside: const BorderSide(),),
               headingRowColor: MaterialStateProperty.all(Colors.grey),
               columns: [
                 DataColumn(
                     label: SizedBox(
+                  width: context.width / 3 - 110,
                   child: const Text(
                     'AY',
                     textAlign: TextAlign.center,
                   ),
-                  width: context.width / 3 - 110,
-                )),
+                ),),
                 DataColumn(
                     label: SizedBox(
-                  child: const Text('SATILAN ÜRÜN\n ADEDİ',
-                      textAlign: TextAlign.center, softWrap: true),
                   width: context.width / 3 - 50,
-                )),
+                  child: const Text('SATILAN ÜRÜN\n ADEDİ',
+                      textAlign: TextAlign.center, softWrap: true,),
+                ),),
                 DataColumn(
                     label: Container(
                   color: Colors.red,
-                  child: const Text('TOPLAM SATIŞ',
-                      textAlign: TextAlign.center, softWrap: true),
                   width: context.width / 3 - 50,
-                )),
+                  child: const Text('TOPLAM SATIŞ',
+                      textAlign: TextAlign.center, softWrap: true,),
+                ),),
               ],
               rows: const [
                 DataRow(cells: [
                   DataCell(Text('#100', textAlign: TextAlign.center)),
                   DataCell(Text('Flutter Basics', textAlign: TextAlign.center)),
-                  DataCell(Text('David John', textAlign: TextAlign.center))
-                ]),
+                  DataCell(Text('David John', textAlign: TextAlign.center)),
+                ],),
                 DataRow(cells: [
                   DataCell(Text('#101', textAlign: TextAlign.center)),
                   DataCell(Text('Dart Internals', textAlign: TextAlign.center)),
-                  DataCell(Text('Alex Wick', textAlign: TextAlign.center))
-                ])
-              ])
+                  DataCell(Text('Alex Wick', textAlign: TextAlign.center)),
+                ],),
+              ],),
         ],
-      )),
+      ),),
     );
   }
 }

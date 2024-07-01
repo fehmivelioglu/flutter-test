@@ -149,6 +149,7 @@ PODS:
   - nanopb/encode (2.30909.0)
   - platform_device_id (0.0.1):
     - Flutter
+  - PromisesObjC (2.4.0)
   - SDWebImage (5.19.0):
     - SDWebImage/Core (= 5.19.0)
   - SDWebImage/Core (5.19.0)
@@ -164,7 +165,6 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
   - device_info (from `.symlinks/plugins/device_info/ios`)
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
@@ -207,8 +207,6 @@ SPEC REPOS:
     - SwiftyGif
 
 EXTERNAL SOURCES:
-  camera_avfoundation:
-    :path: ".symlinks/plugins/camera_avfoundation/ios"
   device_info:
     :path: ".symlinks/plugins/device_info/ios"
   device_info_plus:
@@ -243,7 +241,7 @@ SPEC CHECKSUMS:
   device_info_plus: c6fb39579d0f423935b0c9ce7ee2f44b71b9fce6
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
-  file_picker: ce3938a0df3cc1ef404671531facef740d03f920
+  file_picker: 15fd9539e4eb735dc54bae8c0534a7a9511a03de
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_secure_storage: 23fc622d89d073675f2eaa109381aefbcf5a49be
   google_mlkit_commons: 3857c1e9f23ca02073f8dd34a7a3580feb814cef
@@ -268,12 +266,13 @@ SPEC CHECKSUMS:
   MLKitVisionKit: 5b5472d40ffc143bda693ba20a3cff44fe627d41
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   platform_device_id: 81b3e2993881f87d0c82ef151dc274df4869aef5
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SDWebImage: 981fd7e860af070920f249fd092420006014c3eb
   shared_preferences_foundation: 297b3ebca31b34ec92be11acd7fb0ba932c822ca
   ssl_pinning_plugin: 21775d400c46620cc8f6f473824a6362c1b257f8
   SwiftyGif: 93a1cc87bf3a51916001cf8f3d63835fb64c819f
   webview_flutter_wkwebview: 2e2d318f21a5e036e2c3f26171342e95908bd60a
 
-PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
+PODFILE CHECKSUM: 121585b47ccbab60f3d7326247d33ece9c7a9178
 
 COCOAPODS: 1.15.2

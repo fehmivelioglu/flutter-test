@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:ssl_pinning_plugin/ssl_pinning_plugin.dart';
+// import 'package:ssl_pinning_plugin/ssl_pinning_plugin.dart';
 
 import 'package:test/core/extension/lang_extension.dart';
 import 'package:test/core/extension/locale_keys.g.dart';
@@ -21,13 +21,13 @@ class _EasyLocalizationScreenState extends State<EasyLocalizationScreen> {
     const allowedSHA = [
       'CA 3B 3B CE 05 27 6D BC 7D A9 BC 80 D0 C2 0B D3 3A 38 AB 91',
     ];
-    await SslPinningPlugin.check(
-      serverURL: url,
-      headerHttp: <String, String>{},
-      sha: SHA.SHA1,
-      allowedSHAFingerprints: allowedSHA,
-      timeout: 50,
-    ).then(print);
+    // await SslPinningPlugin.check(
+    //   serverURL: url,
+    //   headerHttp: <String, String>{},
+    //   sha: SHA.SHA1,
+    //   allowedSHAFingerprints: allowedSHA,
+    //   timeout: 50,
+    // ).then(print);
     // print(res.body);
   }
 

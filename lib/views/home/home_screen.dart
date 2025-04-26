@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:test/core/extension/device_size_extension.dart';
 import 'package:test/core/provider.dart';
@@ -21,6 +22,12 @@ class HomeScreen extends StatelessWidget {
     TestService().getDeviceInfo();
     // service.getDeviceInfo();
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await http.post(Uri.parse('https://www.google.com'), body: {});
+          print('ss');
+        },
+      ),
       appBar: AppBar(
         title: const Text('Test Uygulaması'),
       ),
@@ -29,9 +36,12 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute<dynamic>(builder: (context) => const BottomBar()),),
-                child: const Text('Persistent BottomBar'),),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute<dynamic>(builder: (context) => const BottomBar()),
+              ),
+              child: const Text('Persistent BottomBar'),
+            ),
             Text(Provider.of<BasketProvider>(context).basket.toString()),
             TextButton(
               onPressed: () => Navigator.push(
@@ -89,10 +99,10 @@ class HomeScreen extends StatelessWidget {
                 ),
                 color: Colors.grey[350],
               ),
-              border: TableBorder.symmetric(
-                inside: const BorderSide(),
+              border: const TableBorder.symmetric(
+                inside: BorderSide(),
               ),
-              headingRowColor: MaterialStateProperty.all(Colors.grey),
+              headingRowColor: WidgetStateProperty.all(Colors.grey),
               columns: [
                 DataColumn(
                   label: SizedBox(
@@ -130,7 +140,8 @@ class HomeScreen extends StatelessWidget {
                   cells: [
                     DataCell(Text('#100', textAlign: TextAlign.center)),
                     DataCell(
-                        Text('Flutter Basics', textAlign: TextAlign.center),),
+                      Text('Flutter Basics', textAlign: TextAlign.center),
+                    ),
                     DataCell(Text('David John', textAlign: TextAlign.center)),
                   ],
                 ),
@@ -138,7 +149,8 @@ class HomeScreen extends StatelessWidget {
                   cells: [
                     DataCell(Text('#101', textAlign: TextAlign.center)),
                     DataCell(
-                        Text('Dart Internals', textAlign: TextAlign.center),),
+                      Text('Dart Internals', textAlign: TextAlign.center),
+                    ),
                     DataCell(Text('Alex Wick', textAlign: TextAlign.center)),
                   ],
                 ),

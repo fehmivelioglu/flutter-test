@@ -17,10 +17,10 @@ class EasyLocalizationScreen extends StatefulWidget {
 class _EasyLocalizationScreenState extends State<EasyLocalizationScreen> {
   Future<dynamic> getData() async {
     // var res = await http.get(Uri.parse('http://192.168.1.101/php/nk_v2/deneme.php'));
-    const url = 'https://www.fehmivelioglu.com';
-    const allowedSHA = [
-      'CA 3B 3B CE 05 27 6D BC 7D A9 BC 80 D0 C2 0B D3 3A 38 AB 91',
-    ];
+    // const url = 'https://www.fehmivelioglu.com';
+    // const allowedSHA = [
+    //   'CA 3B 3B CE 05 27 6D BC 7D A9 BC 80 D0 C2 0B D3 3A 38 AB 91',
+    // ];
     // await SslPinningPlugin.check(
     //   serverURL: url,
     //   headerHttp: <String, String>{},
